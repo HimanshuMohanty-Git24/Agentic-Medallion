@@ -52,7 +52,7 @@ This entire project was built using **Databricks' 14-day free trial** with **$40
 
 ![Medallion Architecture](Images/medallionarch.png)
 
-**📊 Our Data Used **
+**📊 Our Data Used**
 ![Medallion Arch](Images/medallion-architecture.png)
 
 The pipeline implements the industry-standard **three-layer medallion architecture**:
