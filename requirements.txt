@@ -1,0 +1,7 @@
+langchain
+langchain-community
+langchain-core
+databricks-langchain
+langgraph
+playwright
+Pillow
