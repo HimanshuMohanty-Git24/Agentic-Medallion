@@ -1,8 +1,8 @@
 # Agentic Medallion Data Pipeline: AI-Powered ETL with LangChain on Databricks
-![LOGO](Images\Logo.png)
+![LOGO](Images/Logo.png)
 <div align="center">
 
-![Agentic Medallion Data Pipeline](Images\Architecture.png)
+![Agentic Medallion Data Pipeline](Images/Architecture.png)
 
 *A revolutionary approach to data transformation using AI agents and the Medallion Architecture*
 
@@ -50,10 +50,10 @@ This entire project was built using **Databricks' 14-day free trial** with **$40
 
 ### Medallion Architecture Implementation
 
-![Medallion Architecture](Images\medallionarch.png)
+![Medallion Architecture](Images/medallionarch.png)
 
 **📊 Our Data Used **
-![Medallion Arch](Images\medallion-architecture.png)
+![Medallion Arch](Images/medallion-architecture.png)
 
 The pipeline implements the industry-standard **three-layer medallion architecture**:
 
@@ -74,7 +74,7 @@ The pipeline implements the industry-standard **three-layer medallion architectu
 
 ### Agentic Workflow Architecture
 
-![Agentic Workflow](Images\AgenticGraph.png)
+![Agentic Workflow](Images/AgenticGraph.png)
 
 The **LangGraph-powered agent orchestration** includes:
 
