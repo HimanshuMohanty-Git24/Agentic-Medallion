@@ -135,8 +135,6 @@ def create_notebook_visualization(table_name: str, plot_type: str,
 
 ### LangSmith Integration
 
-![LangSmith Tracing](./LangSmithTracing.png)
-
 **Complete Tracing Capabilities:**
 - Real-time agent execution monitoring
 - Performance metrics and latency tracking
