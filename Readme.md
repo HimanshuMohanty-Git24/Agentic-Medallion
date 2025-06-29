@@ -292,7 +292,19 @@ This project is open-source and available under the MIT License.
 This **Agentic Medallion Data Pipeline** represents a paradigm shift in data engineering, proving that **AI agents can autonomously handle complex enterprise data transformations**. Built on Databricks' robust platform with comprehensive observability through LangSmith, this system demonstrates the future of intelligent, self-managing data infrastructure.
 
 The combination of **practical enterprise experience** from Accenture, **cutting-edge AI orchestration** with LangChain, and **modern cloud architecture** on Databricks creates a truly revolutionary approach to data pipeline automation.
+## 🙏 Acknowledgements
 
+### Learning Resources
+
+I owe a significant debt of gratitude to **Krish Naik** and his exceptional YouTube channel for providing invaluable learning resources throughout this project. His detailed tutorials on LangGraph, agent-based systems, and practical AI implementation were instrumental in bringing this pipeline to life.
+
+**🎓 Key Learning Resources:**
+- [Krish Naik's YouTube Channel](https://www.youtube.com/@krishnaik06) - Expert tutorials on LangChain, LangGraph, and AI engineering
+- His clear explanations of agent orchestration patterns
+- Practical demonstrations of complex AI system implementation
+- Insights into best practices for production-grade AI systems
+
+Krish's commitment to sharing knowledge made complex topics accessible and actionable, significantly accelerating the development of this agentic pipeline.
 ---
 
 <div align="center">
