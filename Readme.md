@@ -303,8 +303,6 @@ I owe a significant debt of gratitude to **Krish Naik** and his exceptional YouT
 - His clear explanations of agent orchestration patterns
 - Practical demonstrations of complex AI system implementation
 - Insights into best practices for production-grade AI systems
-
-Krish's commitment to sharing knowledge made complex topics accessible and actionable, significantly accelerating the development of this agentic pipeline.
 ---
 
 <div align="center">
