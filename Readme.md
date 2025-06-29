@@ -1,6 +1,6 @@
 # Agentic Medallion Data Pipeline: AI-Powered ETL with LangChain on Databricks
-![LOGO](Images/Logo.png)
 <div align="center">
+<img src="Images/Logo.png" alt="LOGO" width="200"/>
 
 ![Agentic Medallion Data Pipeline](Images/Architecture.png)
 
