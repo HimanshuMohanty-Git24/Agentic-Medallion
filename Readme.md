@@ -106,7 +106,7 @@ The **LangGraph-powered agent orchestration** includes:
 
 ### HITL (Human-in-the-Loop) Workflow
 
-![HITL Workflow](Images/HITL_Workflow.png)
+![HITL Workflow](Images/HITL.png)
 
 The **HITL pipeline** introduces enterprise-grade governance with mandatory human oversight:
 
