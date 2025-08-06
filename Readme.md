@@ -4,7 +4,7 @@
 
 ![Agentic Medallion Data Pipeline](Images/Architecture.png)
 
-*A revolutionary approach to data transformation using AI agents and the Medallion Architecture*
+*Revolutionary AI ETL with Medallion Architecture: Zero-touch autonomous & HITL pipelines on Databricks*
 
 [![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=Databricks&logoColor=white)](https://databricks.com/)
 [![LangChain](https://img.shields.io/badge/🦜_LangChain-00D4AA?style=for-the-badge)](https://langchain.com/)
@@ -16,13 +16,28 @@
 
 ## 🚀 Project Overview
 
-This project represents a groundbreaking fusion of **AI-powered automation** and **enterprise data engineering**, creating the world's first fully autonomous data transformation pipeline using the **Medallion Architecture** on Databricks. Built during my internship at Accenture, this system leverages **agentic AI** to automatically plan, generate, review, and execute data transformations with zero human intervention.
+This project represents a groundbreaking fusion of **AI-powered automation** and **enterprise data engineering**, creating intelligent data transformation pipelines using the **Medallion Architecture** on Databricks. Built during my internship at Accenture, this system offers two revolutionary approaches:
+
+1. **Fully Autonomous Pipeline**: AI agents handle the entire ETL process with zero human intervention
+2. **Human-in-the-Loop (HITL) Pipeline**: AI agents generate code and create GitHub Pull Requests for human review before deployment
 
 ### 🎯 What Makes This Revolutionary?
+
+#### **No-Touch Autonomous Pipeline**
 
 - **Fully Autonomous**: AI agents handle the entire ETL process from planning to execution
 - **Self-Healing**: Automatic error detection and code correction through agent collaboration
 - **Production-Ready**: Handles real-world data quality issues and edge cases
+
+#### **Human-in-the-Loop (HITL) Pipeline** ⭐ **NEW**
+
+- **AI-Generated Pull Requests**: Agents create GitHub PRs with generated PySpark code and pytest suites
+- **Mandatory Human Review**: All code changes require human approval before merging
+- **Enterprise-Grade Governance**: Combines AI speed with human oversight and quality control
+- **Git-Based Workflow**: Full version control integration with branch management
+
+#### **Common Features**
+
 - **Observable**: Complete tracing and monitoring with LangSmith integration
 - **Scalable**: Built on Databricks serverless architecture for enterprise-scale workloads
 
@@ -89,6 +104,27 @@ The **LangGraph-powered agent orchestration** includes:
 - Error detection and remediation
 - Retry mechanisms with exponential backoff
 
+### HITL (Human-in-the-Loop) Workflow
+
+![HITL Workflow](Images/HITL_Workflow.png)
+
+The **HITL pipeline** introduces enterprise-grade governance with mandatory human oversight:
+
+**🔄 HITL Process Flow:**
+1. **AI Agent Planning**: Planner agent creates transformation strategy
+2. **Code Generation**: AI generates PySpark code and comprehensive pytest suites
+3. **Automated Review**: Code reviewer agent validates logic and testing coverage
+4. **Automated Testing**: Pytest suite execution with validation
+5. **GitHub PR Creation**: Automatic branch creation and pull request submission
+6. **Human Review Gate**: Mandatory human code review and approval
+7. **CI/CD Integration**: Merging triggers automated deployment pipeline
+
+**🛡️ Enterprise Benefits:**
+- **Governance Compliance**: All code changes tracked through version control
+- **Quality Assurance**: Human oversight ensures business logic correctness
+- **Audit Trail**: Complete history of code changes and approvals
+- **Risk Mitigation**: Prevents automatic deployment of potentially harmful code
+
 ## 🛠️ Technical Implementation
 
 ### Core Technologies
@@ -114,12 +150,25 @@ def get_table_info(table_name: str) -> str:
     statistics, and data preview for transformation planning."""
 ```
 
-**⚡ Safe Code Execution**
+**⚡ Safe Code Execution (No-Touch Pipeline)**
 ```python
 @tool  
 def execute_pyspark_code(code: str) -> str:
     """Executes PySpark transformation code with comprehensive 
     error handling and validation."""
+```
+
+**🔄 HITL Git Integration (New in HITL Pipeline)**
+```python
+@tool
+def create_pull_request(task_name: str, code: str, tests: str, plan: str) -> str:
+    """Creates a new branch, commits the code and tests, and opens a 
+    GitHub pull request for human review."""
+
+@tool
+def run_pytest_tests(code: str, tests: str) -> str:
+    """Executes a pytest suite against provided PySpark code to ensure 
+    correctness. Returns success or failure with logs."""
 ```
 
 **📊 Automated Visualization**
@@ -173,6 +222,7 @@ The pipeline automatically generates executive-ready dashboards:
 **Platform Requirements:**
 - Databricks Trial Account (14-day free trial with $400 credits) or Pro Version
 - LangSmith Account (for observability)
+- GitHub Account and Personal Access Token (for HITL workflow)
 - Basic understanding of PySpark and data concepts
 
 **Setup Instructions:**
@@ -189,8 +239,19 @@ The pipeline automatically generates executive-ready dashboards:
    os.environ["LANGCHAIN_PROJECT"] = "Databricks - Medallion Pipeline"
    ```
 
-3. **Upload Notebook**
-   - Import `DataPipleineAgentic.ipynb` to Databricks workspace
+3. **Setup GitHub Repository (for HITL Pipeline)**
+   ```python
+   # Create a new GitHub repository for your project
+   # Generate a Personal Access Token with repo permissions
+   # Configure in the HITL notebook:
+   GITHUB_API_TOKEN = "YOUR_GITHUB_TOKEN"
+   GITHUB_REPO_OWNER = "your-username"
+   GITHUB_REPO_NAME = "your-repo-name"
+   ```
+
+4. **Upload Notebook**
+   - Import `HITL_ETL_Agentic.ipynb` to Databricks workspace for HITL workflow
+   - Import `DataPipleineAgentic.ipynb` for autonomous workflow
    - Ensure serverless compute is enabled
    - Run cells sequentially
 
@@ -234,6 +295,41 @@ The pipeline automatically generates executive-ready dashboards:
 | **Error Handling** | Manual debugging | Self-healing loops |
 | **Maintenance** | Constant updates | Adaptive learning |
 | **Scalability** | Linear scaling | Exponential efficiency |
+
+### No-Touch Autonomous vs. Human-in-the-Loop Comparison
+
+| Feature | No-Touch Autonomous | Human-in-the-Loop (HITL) |
+|---------|-------------------|---------------------------|
+| **Execution Speed** | ⚡ Fastest - Immediate execution | 🔄 Moderate - Requires human approval |
+| **Risk Level** | ⚠️ Higher - No human oversight | ✅ Lower - Human validation gate |
+| **Governance** | 🤖 AI-only validation | 🛡️ Enterprise-grade with audit trails |
+| **Use Case** | Development & testing environments | Production & critical systems |
+| **Quality Control** | AI code reviewer only | AI reviewer + Human expertise |
+| **Deployment** | Direct to environment | Git-based CI/CD pipeline |
+| **Compliance** | Limited audit trail | Full version control history |
+| **Error Recovery** | Self-healing with retries | Human intervention + automated fixes |
+
+### Why HITL is Superior for Enterprise
+
+**🛡️ Production Safety**
+- Human validation prevents deployment of potentially harmful transformations
+- Expert oversight catches business logic errors AI might miss
+- Mandatory code review ensures compliance with enterprise standards
+
+**📋 Regulatory Compliance**
+- Complete audit trail through Git version control
+- Documented approval process for all code changes
+- Traceable history of who approved what and when
+
+**🎯 Quality Assurance**
+- Combines AI speed with human domain expertise
+- Peer review catches edge cases and business requirements
+- Maintains high code quality standards across the organization
+
+**🚀 Best of Both Worlds**
+- AI handles the heavy lifting of code generation and testing
+- Humans provide strategic oversight and business validation
+- Faster than traditional development, safer than fully autonomous
 
 ### Business Benefits
 
