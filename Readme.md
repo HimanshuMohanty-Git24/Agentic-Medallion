@@ -108,6 +108,9 @@ The **LangGraph-powered agent orchestration** includes:
 
 ![HITL Workflow](Images/HITL.png)
 
+### HITL (Human-in-the-Loop) Architecture
+<img width="7491" height="3005" alt="Architecture_HITL" src="https://github.com/user-attachments/assets/f51e9e07-d1fe-4e48-ae4c-5347c5a1d359" />
+
 The **HITL pipeline** introduces enterprise-grade governance with mandatory human oversight:
 
 **🔄 HITL Process Flow:**
@@ -408,3 +411,4 @@ I owe a significant debt of gratitude to **Krish Naik** and his exceptional YouT
 *Transforming the future of data engineering, one autonomous pipeline at a time.*
 
 </div>
+
